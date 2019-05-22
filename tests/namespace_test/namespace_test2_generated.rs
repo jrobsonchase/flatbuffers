@@ -4,8 +4,11 @@
 #![allow(unused_imports, dead_code)]
 
 use crate::namespace_test1_generated::*;
-use std::mem;
-use std::cmp::Ordering;
+
+extern crate core;
+
+use self::core::mem;
+use self::core::cmp::Ordering;
 
 extern crate flatbuffers;
 use self::flatbuffers::EndianScalar;
@@ -14,8 +17,11 @@ use self::flatbuffers::EndianScalar;
 pub mod namespace_a {
 
   use crate::namespace_test1_generated::*;
-  use std::mem;
-  use std::cmp::Ordering;
+
+  extern crate core;
+
+  use self::core::mem;
+  use self::core::cmp::Ordering;
 
   extern crate flatbuffers;
   use self::flatbuffers::EndianScalar;
@@ -222,8 +228,11 @@ impl std::fmt::Debug for SecondTableInA<'_> {
 pub mod namespace_c {
 
   use crate::namespace_test1_generated::*;
-  use std::mem;
-  use std::cmp::Ordering;
+
+  extern crate core;
+
+  use self::core::mem;
+  use self::core::cmp::Ordering;
 
   extern crate flatbuffers;
   use self::flatbuffers::EndianScalar;

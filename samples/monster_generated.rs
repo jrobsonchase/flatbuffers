@@ -3,8 +3,11 @@
 
 #![allow(unused_imports, dead_code)]
 
-use std::mem;
-use std::cmp::Ordering;
+
+extern crate core;
+
+use self::core::mem;
+use self::core::cmp::Ordering;
 
 extern crate flatbuffers;
 use self::flatbuffers::EndianScalar;
@@ -12,16 +15,22 @@ use self::flatbuffers::EndianScalar;
 #[allow(unused_imports, dead_code)]
 pub mod my_game {
 
-  use std::mem;
-  use std::cmp::Ordering;
+
+  extern crate core;
+
+  use self::core::mem;
+  use self::core::cmp::Ordering;
 
   extern crate flatbuffers;
   use self::flatbuffers::EndianScalar;
 #[allow(unused_imports, dead_code)]
 pub mod sample {
 
-  use std::mem;
-  use std::cmp::Ordering;
+
+  extern crate core;
+
+  use self::core::mem;
+  use self::core::cmp::Ordering;
 
   extern crate flatbuffers;
   use self::flatbuffers::EndianScalar;
@@ -209,7 +218,7 @@ impl<'b> flatbuffers::Push for Vec3 {
     #[inline]
     fn push(&self, dst: &mut [u8], _rest: &[u8]) {
         let src = unsafe {
-            ::std::slice::from_raw_parts(self as *const Vec3 as *const u8, Self::size())
+            self::core::slice::from_raw_parts(self as *const Vec3 as *const u8, Self::size())
         };
         dst.copy_from_slice(src);
     }
@@ -220,7 +229,7 @@ impl<'b> flatbuffers::Push for &'b Vec3 {
     #[inline]
     fn push(&self, dst: &mut [u8], _rest: &[u8]) {
         let src = unsafe {
-            ::std::slice::from_raw_parts(*self as *const Vec3 as *const u8, Self::size())
+            self::core::slice::from_raw_parts(*self as *const Vec3 as *const u8, Self::size())
         };
         dst.copy_from_slice(src);
     }
